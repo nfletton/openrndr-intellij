@@ -24,7 +24,7 @@ internal sealed class ConstantValueContainer<out T> {
             EnumValue(
                 ClassId.topLevel(FqName("org.openrndr.color.Linearity")),
                 // Default value for Linearity in ColorRGBa
-                Name.identifier(Linearity.UNKNOWN.name)
+                Name.identifier(Linearity.LINEAR.name)
             )
         )
 

@@ -30,7 +30,7 @@ import kotlin.reflect.full.memberProperties
 @Suppress("UseJBColor")
 internal object ColorUtil {
     val colorRGBaFieldNames = arrayOf("r", "g", "b", "alpha")
-    val defaultColorRGBa = ColorRGBa(1.0, 1.0, 1.0, 1.0, Linearity.UNKNOWN)
+    val defaultColorRGBa = ColorRGBa(1.0, 1.0, 1.0, 1.0, Linearity.LINEAR)
 
     fun ColorModel<*>.toAWTColor(): Color = toRGBa().run {
         Color(
@@ -41,7 +41,7 @@ internal object ColorUtil {
         )
     }
 
-    fun Color.toColorRGBa(linearity: Linearity = Linearity.UNKNOWN) = getComponents(null).let { (r, g, b, a) ->
+    fun Color.toColorRGBa(linearity: Linearity = Linearity.LINEAR) = getComponents(null).let { (r, g, b, a) ->
         ColorRGBa(r.toDouble(), g.toDouble(), b.toDouble(), a.toDouble(), linearity)
     }
 
