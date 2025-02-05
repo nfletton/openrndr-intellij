@@ -60,7 +60,7 @@ internal object ColorUtil {
         }
         // There's no easy way to get the ColorRGBa extension properties in orx, we have to use Java reflection
         val extensionColorsJavaClass = Class.forName("org.openrndr.extra.color.presets.ColorsKt")
-        for (method in extensionColorsJavaClass.declaredMethods) {
+        for (method in extensionColorsJavaClass.declaredMethods.filter {it.name.startsWith("get") }) {
             this[method.name.removePrefix("get")] =
                 (method.invoke(ColorRGBa::javaClass, ColorRGBa.Companion) as ColorRGBa).toAWTColor()
         }
