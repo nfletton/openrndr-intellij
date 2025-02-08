@@ -5,6 +5,10 @@
 ### Added
 
 ### Changed
+- Update Kotlin to 2.1.10
+- Update project to IntelliJ Platform Gradle Plugin
+- Update OPENRNDR/ORX to 0.4.5-alpha7
+- Raise minimum supported IntelliJ version to 2024.3.3
 
 ### Removed
 

@@ -1,3 +1,5 @@
+rootProject.name = "openrndr-intellij"
+
 pluginManagement {
     repositories {
         gradlePluginPortal()
@@ -5,4 +7,6 @@ pluginManagement {
     }
 }
 
-rootProject.name = "openrndr-intellij"
+plugins {
+    id("org.gradle.toolchains.foojay-resolver-convention") version "0.9.0"
+}
